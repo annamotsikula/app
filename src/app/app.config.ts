@@ -6,3 +6,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes)]
 };
+
+export const routes: Routes = [
+  // თქვენი როუთების დეკლარაცია აქ
+];
