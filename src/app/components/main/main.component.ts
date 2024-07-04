@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-main',
-  standalone: true,
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent]
 })
-export class MainComponent {}
+export class MainComponent { }
 
 @NgModule({
   imports: [
-      // სხვა imports აქ
       RouterModule
   ],
-  // სხვა პარამეტრები
 })

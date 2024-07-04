@@ -1,12 +1,6 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { appRoutes } from './app.routes';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+export const appConfig = {
+  providers: [provideRouter(appRoutes, withComponentInputBinding())]
 };
-
-export const routes: Routes = [
-  // თქვენი როუთების დეკლარაცია აქ
-];
