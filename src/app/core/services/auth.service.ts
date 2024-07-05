@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
 })
 export class AuthService {
   private apiUrl = 'https://fakestoreapi.com/auth/login';
-
+//AuthService სერვისი არასსწორად  მაქვს დეკორირებული @Injectable-ით.
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {

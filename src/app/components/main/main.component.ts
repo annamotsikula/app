@@ -12,8 +12,3 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class MainComponent { }
 
-@NgModule({
-  imports: [
-      RouterModule
-  ],
-})

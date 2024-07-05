@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
+
+// აქ როუტი მაქვს არასწორი და ვერ გავიგე რა ვქნა
 
 @Component({
   selector: 'app-login',
@@ -12,8 +14,8 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    username: new FormControl<string>('', Validators.required),
+    password: new FormControl<string>('', Validators.required)
   });
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -21,10 +23,14 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-      this.authService.login(username, password).subscribe(
+      this.authService.login(username as string, password as string).subscribe(
         () => this.router.navigate(['/']),
-        (error) => console.error('Login failed', error)
+        //(error) => console.error('Login failed', error)
       );
     }
   }
 }
+// any ტიპის განსაზღვრა სადღაც არასწორად მაქცს მიწერილი
+//.subscribe(() => { 
+  //this.router.navigate........
+  //} )
